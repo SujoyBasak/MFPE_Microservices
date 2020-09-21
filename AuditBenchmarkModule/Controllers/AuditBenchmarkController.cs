@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AuditBenchmarkModule.Models;
+using AuditBenchmarkModule.Providers;
 using AuditBenchmarkModule.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,10 +16,18 @@ namespace AuditBenchmarkModule.Controllers
     {
         // GET: api/AuditBenchmark
         [HttpGet]
-        public IEnumerable<AuditBenchmark> Get()
+        public IActionResult Get()
         {
-            BenchmarkRepo obj = new BenchmarkRepo();
-            return obj.GetNolist();
+            try
+            {
+                BenchmarkProvider obj = new BenchmarkProvider();
+                return Ok(obj.GetBenchmark());
+            }
+            catch(Exception)
+            {
+                return Ok("Exception from AuditBenchmark");
+            }
+            
         }
        
     }

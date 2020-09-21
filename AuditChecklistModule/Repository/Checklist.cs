@@ -8,7 +8,7 @@ namespace AuditChecklistModule.Repository
 {
     public class Checklist : IChecklist
     {
-        List<Questions> InternalQuestionsList = new List<Questions>()
+        private static List<Questions> InternalQuestionsList = new List<Questions>()
         {
             new Questions
             {
@@ -37,7 +37,7 @@ namespace AuditChecklistModule.Repository
             }
         };
 
-        List<Questions> SOXQuestionsList = new List<Questions>()
+        private static List<Questions> SOXQuestionsList = new List<Questions>()
         {
             new Questions
             {
@@ -65,33 +65,18 @@ namespace AuditChecklistModule.Repository
                 Question="Is data deletion from the system done with application owner approval?"
             }
         };
-        //Questions InternalQuestionsList = new Questions()
-        //{
-        //    Question = new List<string>()
-        //    {
-        //        "Your Name","Surname"
-        //    }
-        //};
-        //Questions SOXQuestionsList = new Questions()
-        //{
-        //    Question = new List<string>()
-        //    {
-        //        "Your DOB","AGE"
-        //    }
-        //};
-
+        
 
         public List<Questions> GetQuestions(AuditType auditType)
         {
             if (auditType.Type == "Internal")
                 return InternalQuestionsList;
-            else
+            else if(auditType.Type =="SOX")
                 return SOXQuestionsList;
 
-            //else if (auditType.Type == "SOX")
-            //    return SOXQuestionsList;
+            return null;
 
-            //return null;
+            
         }
 
         

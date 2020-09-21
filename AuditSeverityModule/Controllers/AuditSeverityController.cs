@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using AuditSeverityModule.Models;
+using AuditSeverityModule.Providers;
 using AuditSeverityModule.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,8 +21,9 @@ namespace AuditSeverityModule.Controllers
         [HttpPost]
         public void Post()
         {
-            Severity obj = new Severity();
-            obj.Response(new AuditRequest());            
+            SeverityProvider obj = new SeverityProvider();
+
+            obj.SeverityResponse(new AuditRequest());            
 
         }
         

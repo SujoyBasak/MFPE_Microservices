@@ -8,7 +8,7 @@ namespace AuditBenchmarkModule.Repository
 {
     public class BenchmarkRepo : IBenchmark
     {
-        List<AuditBenchmark> AuditBenchmarkList = new List<AuditBenchmark>()
+        private static List<AuditBenchmark> AuditBenchmarkList = new List<AuditBenchmark>()
         {
             new AuditBenchmark
             {
