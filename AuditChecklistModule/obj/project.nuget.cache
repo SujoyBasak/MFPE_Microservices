@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "TtsKlGDrUczfyp6N+WS9avpV9sqA1mQub5HFcaF4DEHXCDjiD80jmEzBuz/Xw6FtOrVIzgY14dx4nP9ZBAv8JA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Sujoy Basak\\source\\repos\\MFPE\\Microservices\\AuditChecklistModule\\AuditChecklistModule.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sujoy Basak\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.8\\microsoft.visualstudio.azure.containers.tools.targets.1.10.8.nupkg.sha512"
+  ],
+  "logs": []
+}
