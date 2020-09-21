@@ -1,4 +1,5 @@
 ﻿using AuditSeverityModule.Models;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,8 @@ namespace AuditSeverityModule.Repository
             client.BaseAddress = baseAddress;
 
         }
-        public AuditResponse Response(AuditRequest request)
+        
+        public List<AuditBenchmark> Response(InternalQuestions request)
         {
             List<AuditBenchmark> ls = new List<AuditBenchmark>();
 
@@ -29,7 +31,7 @@ namespace AuditSeverityModule.Repository
                 string data = response.Content.ReadAsStringAsync().Result;
                 ls = JsonConvert.DeserializeObject<List<AuditBenchmark>>(data);
             }
-            return new AuditResponse();
+            return ls;
             
 
         }

@@ -8,6 +8,6 @@ namespace AuditChecklistModule.Repository
 {
     public interface IChecklist
     {
-        public List<Questions> GetQuestions(AuditType auditType);        
+        public List<Questions> GetQuestions(string auditType);        
     }
 }

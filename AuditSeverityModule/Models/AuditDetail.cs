@@ -9,6 +9,6 @@ namespace AuditSeverityModule.Models
     {
         public string Type { get; set; }
         public DateTime Date { get; set; }
-        public Questions questions { get; set; }
+        //public Questions questions { get; set; }
     }
 }

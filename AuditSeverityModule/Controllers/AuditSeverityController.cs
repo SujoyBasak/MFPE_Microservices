@@ -16,14 +16,19 @@ namespace AuditSeverityModule.Controllers
     [ApiController]
     public class AuditSeverityController : ControllerBase
     {
+        [HttpGet]
+        public AuditRequest Get()
+        {
+            return new AuditRequest();
+        }
 
         // POST: api/AuditSeverity
         [HttpPost]
-        public void Post()
+        public void Post([FromBody]InternalQuestions questions)    //Change Here
         {
             SeverityProvider obj = new SeverityProvider();
 
-            obj.SeverityResponse(new AuditRequest());            
+            obj.SeverityResponse(questions);            
 
         }
         

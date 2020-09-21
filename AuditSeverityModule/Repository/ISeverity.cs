@@ -8,6 +8,6 @@ namespace AuditSeverityModule.Repository
 {
     public interface ISeverity
     {
-        public AuditResponse Response(AuditRequest request);
+        public List<AuditBenchmark> Response(InternalQuestions questions);
     }
 }

@@ -11,7 +11,7 @@ namespace AuditChecklistModule.Providers
     {
         Checklist obj = new Checklist();
 
-        public List<Questions> QuestionsProvider(AuditType type)
+        public List<Questions> QuestionsProvider(string type)
         {
             var list = obj.GetQuestions(type);
 

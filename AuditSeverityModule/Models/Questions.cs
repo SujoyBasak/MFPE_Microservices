@@ -11,5 +11,6 @@ namespace AuditSeverityModule.Models
         [Key]
         public int QuestionNo { get; set; }
         public string Question { get; set; }
+        public bool Answer { get; set; }
     }
 }

@@ -67,11 +67,11 @@ namespace AuditChecklistModule.Repository
         };
         
 
-        public List<Questions> GetQuestions(AuditType auditType)
+        public List<Questions> GetQuestions(string auditType)
         {
-            if (auditType.Type == "Internal")
+            if (auditType == "Internal")
                 return InternalQuestionsList;
-            else if(auditType.Type =="SOX")
+            else if(auditType =="SOX")
                 return SOXQuestionsList;
 
             return null;

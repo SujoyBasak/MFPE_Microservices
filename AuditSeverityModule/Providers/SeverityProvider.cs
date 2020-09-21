@@ -11,9 +11,9 @@ namespace AuditSeverityModule.Providers
     {
         Severity obj = new Severity();
 
-        public AuditResponse SeverityResponse(AuditRequest request)
+        public AuditResponse SeverityResponse(InternalQuestions questions)
         {
-            return obj.Response(request);            
+            return null;       
         }
     }
 }

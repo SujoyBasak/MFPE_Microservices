@@ -15,8 +15,8 @@ namespace AuditChecklistModule.Controllers
     public class AuditChecklistController : ControllerBase
     {
         // GET: api/AuditChecklist
-        [HttpGet]
-        public IActionResult Get([FromBody]AuditType auditType)
+        [HttpGet("{auditType}")]
+        public IActionResult Get(string auditType)
         {
             try
             {
