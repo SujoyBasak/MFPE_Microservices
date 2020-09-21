@@ -19,17 +19,38 @@ namespace AuditSeverityModule.Controllers
         [HttpGet]
         public AuditRequest Get()
         {
-            return new AuditRequest();
+            AuditRequest req = new AuditRequest();
+            req.ProjectName = "Test";
+            req.ProjectManagerName = "Sujoy B";
+            req.ApplicationOwnerName = "Basak";
+            AuditDetail ad = new AuditDetail();
+            ad.Type = "Internal";
+            //ad.Date = new DateTime(01, 01, 2020);
+            Questions q = new Questions();
+
+            q.Question1 = true;
+            q.Question2 = true;
+            q.Question3 = true;
+            q.Question4 = true;
+            q.Question5 = true;
+            ad.questions = q;
+            req.Auditdetails = ad;            
+
+            return req;
         }
 
         // POST: api/AuditSeverity
         [HttpPost]
-        public void Post([FromBody]InternalQuestions questions)    //Change Here
+        public IActionResult Post([FromBody]AuditRequest req)    //Change Here
         {
             SeverityProvider obj = new SeverityProvider();
 
-            obj.SeverityResponse(questions);            
+            var response=obj.SeverityResponse(req);
+            if (response == null)
+                return BadRequest();
+            
 
+            return Ok(response);
         }
         
     }
